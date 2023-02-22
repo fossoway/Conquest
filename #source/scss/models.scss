@@ -1,0 +1,105 @@
+.models{
+  margin-bottom: 35px;
+}
+.models__title{
+  text-align: center;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  margin-bottom: 25px;
+}
+.models__link-catalog{
+  display: block;
+  text-align: right;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 25px;
+  color:$color_footer_bg;
+  position: relative;
+  transition: color 0.5s;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 105px;
+    height: 1px;
+    background-color: $color_line;
+    transition: background-color 0.5s;
+  }
+  &:hover:after {
+    background-color:$color_line;
+    transition: background-color 0.5s;
+  }
+}
+.models__link{
+  &:hover{
+    color:$color_line;
+    transition: color 0.5s;
+  }
+}
+.models__items{
+  clear: both;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  .models__item{
+    background-color: $color_watch_bg;
+    padding: 35px;
+    flex-basis: 370px;
+    .models__name{
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.03em;
+      color:$color_text;
+      margin-bottom: 7px;
+    }
+    .models__price{
+      position: relative;
+      font-family: 'Prata', sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 8px;
+      color:$color_text;
+      @extend %ruble;
+    }
+  }
+}
+.models__image{
+  max-width: 313px;
+  max-height: 313px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  margin-bottom: 20px;
+}
+.circle {
+  box-shadow: -1px 0 0 1px rgba(253, 253, 251, 1),
+              -1px -1px 0 1px rgba(253, 253, 251, 1),
+              -1px 1px 0 1px rgba(253, 253, 251, 1),
+              0 -1px 0 1px rgba(226, 208, 196, 0.5),
+              0 1px 0 1px rgba(226, 208, 196, 0.5),
+              1px -1px 0 1px rgba(226, 208, 196, 0.25),
+              1px 1px 0 1px rgba(226, 208, 196, 0.25),
+              1px 0 0 1px rgba(253, 253, 251, 1);
+}
+.models__link-underline{
+  font-family: 'Playfair Display', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  margin-left: 80px;
+  @extend %left-line-30px;
+}
+@media (max-width: 840px) {
+  .models__items{
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,169 @@
+.promo{
+  display:flex;
+  justify-content: space-evenly;
+  padding: 20px 20px 0 20px;
+  z-index: 500;
+}
+.promo__title{
+  @extend %left-line-50px;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 60px;
+  color:$color_title;
+}
+.promo__subtitle{
+  color:$color_title;
+  font-size: 30px;
+  line-height: 40px;
+}
+.promo__container{
+  display: flex;
+  &-left{
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    z-index: 10;
+    .promo__text{
+      max-width: 250px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+      color:$color_text;
+    }
+  }
+  &-right{
+    position: relative;
+    .promo__description{
+      position: absolute;
+      font-family: 'Prata', serif;
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .promo__description-price{
+      top:150px;
+      left:-60px;
+      @extend %right-line-50px;
+    }
+    .promo__description-diameter{
+      z-index: 1;
+      bottom:150px;
+      right:-60px;
+      @extend %left-line-50px;
+    }
+  }
+}
+.promo__price{
+  line-height: 10px;
+  color:$color_title;
+  @extend %ruble;
+}
+.promo__link{
+  @extend %button;
+  background-color:$color_footer_bg;
+}
+.promo__img{
+  position: relative;
+  width: 502px;
+  height: 804px;
+  z-index: 1;
+  img {
+    position: relative;
+  }
+  &:after{
+    content:"";
+    position: absolute;
+    background-image: url("../../img/Ellipse.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -35%;
+    width: 496px;
+    height: 944px;
+    z-index: -1;
+  }
+}
+@media (max-width: 1024px) {
+  .promo__img{
+    height: 604px;
+    width: auto;
+    &:after{
+      height: 580px;
+    }
+  }
+}
+@media (max-width: 800px) {
+  .promo__title{
+    font-size: 36px;
+    line-height: 45px;
+  }
+  .promo__subtitle{
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .promo__container{
+    &-right{
+      .promo__description{
+        position: absolute;
+        font-family: 'Prata', serif;
+        font-weight: 400;
+        font-size: 16px;
+      }
+      .promo__description-price{
+        top:100px;
+        left:-50px;
+        @extend %right-line-50px;
+      }
+      .promo__description-diameter{
+        z-index: 1;
+        bottom:100px;
+        right:-50px;
+        @extend %left-line-50px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .promo__img{
+    height: 480px;
+    width: auto;
+    min-width: 170px;
+    &:after{
+      height: 460px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  .promo__container{
+    &-right{
+      .promo__description{
+        display: none;
+      }
+    }
+  }
+  .promo__img{
+    &:after{
+      display: none;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .promo__container {
+    &-left {
+      justify-content: flex-start;
+    }
+  }
+  .promo__title{
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .promo__subtitle{
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media (max-width: 580px) {
+  .promo__container {
+    &-right {
+      display: none;
+    }
+  }
+}
